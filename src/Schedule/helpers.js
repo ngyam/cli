@@ -80,7 +80,6 @@ async function scheduleUsingWallet({
         if (result.receipt && !result.hasOwnProperty('error')) {
             const successValues = [1, '0x1', '0x01', true];
             if (successValues.indexOf(result.receipt.status) === -1) {
-                spinner.fail(`Transaction failed.`);
                 throw `Receipt: ${JSON.stringify(result.receipt)}`;
             }
 
